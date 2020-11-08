@@ -21,4 +21,14 @@ router.get('/signIn',function(req,res){
     });
 });
 
+router.get('/signUp',function(req,res){
+    fs.readFile(__dirname+'/../static/html/signUp.html',(err,data)=>{
+        if(err){
+            console.log('cannot read signIn html :>> ', err);
+        }
+        res.writeHead(200,{});
+        res.end(data,'utf-8');
+    });
+});
+
 module.exports = router;

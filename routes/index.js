@@ -4,6 +4,7 @@ var http = require('http');
 var fs = require('fs');
 var router = express.Router();
 var connection = require('../connect');
+
 router.get('',function(req,res){
     if(!req.session.user){
         res.redirect('signIn');
@@ -36,5 +37,11 @@ router.post('/signUp',function(req,res){
     var db = connection.getDb();
     console.log('db :>> ', db);
     console.log('req.body :>> ', req.body);
+    user = {
+        email:req.body.email,
+        password:req.body.password
+    }
+    db.collection('user').insertOne(user);
+    res.redirect('/signIn');
 });
 module.exports = router;

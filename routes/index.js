@@ -3,7 +3,7 @@ var session = require('express-session');
 var http = require('http');
 var fs = require('fs');
 var router = express.Router();
-
+var connection = require('../connect');
 router.get('',function(req,res){
     if(!req.session.user){
         res.redirect('signIn');
@@ -31,4 +31,10 @@ router.get('/signUp',function(req,res){
     });
 });
 
+
+router.post('/signUp',function(req,res){
+    var db = connection.getDb();
+    console.log('db :>> ', db);
+    console.log('req.body :>> ', req.body);
+});
 module.exports = router;

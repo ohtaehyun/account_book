@@ -23,10 +23,13 @@ module.exports = {
         })});
     },
     
-    dupCheck : function(email){
-        const db = connection.getDb();
-        const user = db.collection('user').find(email);
-        if(user) return true;
-        return false;
+    dupCheck : function(email) {
+        return new Promise((resolve,reject)=>{
+            const db = connection.getDb();
+            db.collection('user').findOne({'email' : email},function(err,user){
+                if(user) resolve(true);
+                resolve(false);
+            });
+        });
     }
 }

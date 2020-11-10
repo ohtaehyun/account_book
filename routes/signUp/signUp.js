@@ -1,3 +1,4 @@
+const { application, json } = require('express');
 const express = require('express');
 const fs = require('fs');
 const router = express.Router();
@@ -15,7 +16,6 @@ router.get('',function(req,res){
 
 
 router.post('',function(req,res){
-    service.dupCheck(req.body.email);
     service.signUp(req.body)
     .then((r) => {
         res.redirect('/signIn');
@@ -25,4 +25,19 @@ router.post('',function(req,res){
     });
 });
 
+router.post('/checkEmail',function(req,res){
+    service.dupCheck(req.body.email)
+    .then((r) =>{
+        res.statusCode = 200;
+        res.setHeader('content-type','application/json');
+        const resData = {
+            useable:r
+        };
+        res.end(JSON.stringify(resData));
+    })
+    .catch((err) => {
+        console.log('email duplicate check err :>> ', err);
+    });
+
+});
 module.exports = router;

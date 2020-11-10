@@ -6,7 +6,7 @@
  * @param {*} callBack 
  * @param {*} errCallBack
  */
-function SendPostFetch(url,data,callBack,errCallBack){
+function sendPostFetch(url,data,callBack,errCallBack){
     fetch(url,{
         method: 'post',
         headers:{
@@ -29,7 +29,7 @@ function SendPostFetch(url,data,callBack,errCallBack){
  * @param {*} formId form id 
  * @return {*} json object
  */
-function FormToJson(formId){
+function formToJson(formId){
     const form = document.querySelector('#'+formId);
     const formData = new FormData(form);
     console.log('...formData :>> ', ...formData);

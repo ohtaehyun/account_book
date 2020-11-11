@@ -1,4 +1,3 @@
-const { application, json } = require('express');
 const express = require('express');
 const fs = require('fs');
 const router = express.Router();
@@ -18,7 +17,12 @@ router.get('',function(req,res){
 router.post('',function(req,res){
     service.signUp(req.body)
     .then((r) => {
-        res.redirect('/signIn');
+        res.statusCode = 201;
+        res.setHeader('Content-Type','application/json');
+        const resData = {
+            'nextLink' : '/signIn'
+        };
+        res.end(JSON.stringify(resData));
     })
     .catch((err) => {
         console.log('signUp err :>> ', err);
@@ -29,7 +33,7 @@ router.post('/checkEmail',function(req,res){
     service.dupCheck(req.body.email)
     .then((r) =>{
         res.statusCode = 200;
-        res.setHeader('content-type','application/json');
+        res.setHeader('Content-Type','application/json');
         const resData = {
             useable:r
         };

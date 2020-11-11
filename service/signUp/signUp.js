@@ -15,6 +15,9 @@ module.exports = {
                 const db = connection.getDb();
                 db.collection('user')
                 .insertOne({email:email,password:key.toString("base64"),key:buf.toString("base64")})
+                .then(()=>{
+                    resolve(true);
+                })
                 .catch((err)=>{
                     console.log('insertion err :>> ', err);
                     rejected('signUp insertion failed');
@@ -27,8 +30,8 @@ module.exports = {
         return new Promise((resolve,reject)=>{
             const db = connection.getDb();
             db.collection('user').findOne({'email' : email},function(err,user){
-                if(user) resolve(true);
-                resolve(false);
+                if(user) resolve(false);
+                resolve(true);
             });
         });
     }

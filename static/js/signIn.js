@@ -10,6 +10,13 @@ async function signIn(){
     const data = formToJson('signInForm');
     if(checkForm()){
         const response = await sendPostFetch('/signIn',JSON.stringify(data));
+        if(response.status === 200){
+            const json = response.json();
+            window.location.href = json.nextLink;
+        }
+        else if(response.status === 401){
+            alert('wrong email or wrong password');
+        }
     }
 }
 

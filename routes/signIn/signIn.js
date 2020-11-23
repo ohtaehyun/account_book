@@ -22,7 +22,6 @@ router.post('',function(req,res){
         if(result){
             res.statusCode = 200;
             req.session.user = req.body.email;
-            // res.end({'next_link':'/home'});
             const resData = {
                 'nextLink' : '/home'
             };

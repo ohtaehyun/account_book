@@ -6,7 +6,6 @@ function loadPage(){
 }
 
 async function signIn(){
-    const signInForm = document.querySelector('#signInForm');
     const data = formToJson('signInForm');
     if(checkForm()){
         const response = await sendPostFetch('/signIn',JSON.stringify(data));

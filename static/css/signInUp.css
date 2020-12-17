@@ -1,0 +1,57 @@
+html, body {
+    height: 100%;
+}
+
+.container{
+    position: relative;
+    top: 25%;
+    width: 70%;
+}
+
+.leftBox, .rightBox{
+    display: inline-block;
+    width: 50%;
+}
+
+.card{
+    padding: 0;
+    flex-direction: row;
+    height: 250px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, .2), 0 8px 8px rgba(0, 0, 0, .2);
+}
+
+.moveBox{
+    padding:20px;
+    position: absolute;
+    height: 250px;
+    width: 50%;
+    background-color:#009432;
+    transition: all .5s ease-in-out;
+}
+
+.borderLeft{
+    border-radius:15px 0 0 15px;
+}
+
+.borderRight{
+    border-radius:0 15px 15px 0;
+}
+
+input {
+    width: 80% !important;
+    display: inline-block !important;
+}
+
+.textZone{
+    height: 80%;
+}
+
+.btn-bottom{
+    margin: auto;
+}
+
+button {
+    background-color:white !important;
+}

@@ -1,4 +1,5 @@
 function init(){
+    const signUpSubmit = document.querySelector('#signUpSubmit');
     const moveSignIn = document.querySelector('#moveSignIn');
     const moveBox = document.querySelector('.moveBox');
     const signIn = document.querySelector('.signIn');
@@ -18,6 +19,16 @@ function init(){
         moveBox.classList.remove('borderRight');
         signUp.classList.add('hide');
         signIn.classList.remove('hide');
+    });
+
+    signUpSubmit.addEventListener('click',function(){
+
+        const data = {
+            email : document.querySelector('#signUpEmail').value,
+            password : document.querySelector('#signUpPassword').value,
+            passwordConfirm : document.querySelector('#signUpPasswordConfirm').value
+        }
+        ajax('/login/sign-up', 'POST', data);
     });
 }
 

@@ -1,19 +1,29 @@
+require('dotenv').config
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
-var signUp = require('./controller/signUp');
+// var bodyParser = require('body-parser');
+var login = require('./controller/login');
 
 app.use(express.static('static'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+
+app.use(
+    express.urlencoded({
+        extended:true
+    })
+);
+
+app.use(
+    express.json(
+        {type: ['application/json', 'text/plain']}
+    )
+);
 
 app.set('view engine','ejs');
 
-app.listen(8000,()=>{
+app.listen(process.env.SERVER_PORT,()=>{
     console.log('server running :>> ');
 });
 
 
 // routing
-app.use('/signup',signUp);
-// app.get('signup',signUp);
+app.use('/login',login);

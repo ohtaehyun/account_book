@@ -11,6 +11,8 @@ html, body {
 .leftBox, .rightBox{
     display: inline-block;
     width: 50%;
+    padding: 10px;
+    margin: auto;
 }
 
 .card{
@@ -25,6 +27,7 @@ html, body {
 .moveBox{
     padding:20px;
     position: absolute;
+    right: 0;
     height: 250px;
     width: 50%;
     background-color:#009432;
@@ -52,6 +55,10 @@ input {
     margin: auto;
 }
 
-button {
-    background-color:white !important;
-}
+.leftBox input, .rightBox input {
+    width: 40% !important;
+} 
+
+.leftBox label, .rightBox label {
+    width: 20% !important;
+} 

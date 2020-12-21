@@ -5,16 +5,15 @@ function init(){
     const signUp = document.querySelector('.signUp');
 
     moveSignIn.addEventListener('click',(e)=>{
-        moveBox.setAttribute('style','transform:translateX(100%)');
+        moveBox.setAttribute('style','transform:translateX(0%)');
         moveBox.classList.remove('borderLeft');
         moveBox.classList.add('borderRight');
         signIn.classList.add('hide');
         signUp.classList.remove('hide');
     });
 
-    
     moveSignUp.addEventListener('click',(e)=>{
-        moveBox.setAttribute('style','transform:translateX(0%)');
+        moveBox.setAttribute('style','transform:translateX(-100%)');
         moveBox.classList.add('borderLeft');
         moveBox.classList.remove('borderRight');
         signUp.classList.add('hide');

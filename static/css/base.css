@@ -54,3 +54,9 @@ body {
     font-size: 24px !important;
     font-weight: 900 !important;
 }
+
+button{
+    color: black!important;
+    background-color:#e2e4e7 !important;
+    border-color: black !important;
+}

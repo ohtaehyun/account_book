@@ -26,8 +26,8 @@
     <div class="container ">
       <div class="row align-items-center">
         <div class="card">
-          <div class="moveBox text-center borderLeft">
-            <div class="signUp hide h-100">
+          <div class="moveBox text-center borderRight">
+            <div class="signUp  h-100">
               <div class="textZone">
                 <h1>Register</h1> 
                 <h2>Check where you spend money</h1>
@@ -35,7 +35,7 @@
               <button class="btn btn-outline-primary btn-bottom"  id="moveSignUp">Sign Up</button>
             </div>
             
-            <div class="signIn h-100">
+            <div class="signIn hide h-100">
               <div class="textZone">
                 <h1>Welcome</h1> 
               </div>
@@ -44,10 +44,36 @@
           </div>
 
 
-
-
-          <div class="col leftBox">left</div>
-          <div class="col rightBox ">right</div>
+          <div class="col leftBox text-center">
+            <form>
+              <div class="mb-3">
+                <label for="signUpEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="signUpPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="signUpPassword">
+              </div>
+              <button type="submit" class="btn btn-primary">login</button>
+            </form>
+          </div>
+          <div class="col rightBox text-center ">
+            <form>
+              <div class="mb-3">
+                <label for="signUpEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="signUpPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="signUpPassword">
+              </div>
+              <div class="mb-3">
+                <label for="signUpPassword" class="form-label">Password confirm</label>
+                <input type="password" class="form-control" id="signUpPassword">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

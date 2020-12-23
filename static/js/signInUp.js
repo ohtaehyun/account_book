@@ -22,6 +22,13 @@ function init(){
     });
 
     signUpSubmit.addEventListener('click',function(){
+        const email = document.querySelector('#signUpEmail').value;
+        const password = document.querySelector('#signUpPassword').value;
+        const passwordConfirm = document.querySelector('#signUpPasswordConfirm').value;
+
+        if(!emailFormatValidator(email) || !passwordValidator(password,passwordConfirm)){
+            return false;
+        }
 
         const data = {
             email : document.querySelector('#signUpEmail').value,

@@ -9,3 +9,4 @@ function ajax(url,method,jsonData,isSync){
     })
     .then()
 }
+

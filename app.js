@@ -1,9 +1,8 @@
-require('dotenv').config
 var express = require('express');
 var app = express();
 // var bodyParser = require('body-parser');
 var login = require('./controller/login');
-
+require('dotenv').config();
 app.use(express.static('static'));
 
 app.use(
